@@ -13,6 +13,13 @@ const Form = () => {
     e.preventDefault();
     if (emailValidated && passValidate && confimPassValidate) {
       alert("Form Submitted Successfully");
+      e.target.reset();
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+      setEmailValidated(false);
+      setpassValidate(false);
+      setconfimPassValidate(false);
     } else {
       alert("Can't Submit The Form");
     }
@@ -77,7 +84,9 @@ const Form = () => {
       />
       {!confimPassValidate && <p>Passwords do not match</p>}
 
-      <button type="submit">SignUp</button>
+      <button className="btn" type="submit">
+        SignUp
+      </button>
     </form>
   );
 };
